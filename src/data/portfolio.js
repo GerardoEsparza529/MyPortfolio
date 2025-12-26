@@ -1,0 +1,423 @@
+// Portfolio Data - Gerardo Esparza
+
+export const personalInfo = {
+  name: "Gerardo Esparza",
+  title: "Ing. Sistemas Computacionales",
+  subtitle: "Full Stack Developer & Cloud Solutions Engineer",
+  location: "México",
+  tagline:
+    "Ingeniero en Sistemas Computacionales y Desarrollador de Software Full Stack enfocado en crear soluciones modernas, escalables y centradas en el negocio.",
+  description:
+    "Tengo experiencia liderando proyectos end-to-end: desde la recolección de requisitos y el diseño de arquitecturas robustas, hasta la construcción de APIs REST, PWAs y sistemas completos listos para producción.",
+  email: "gerardo.esparz4@gmail.com",
+  linkedin: "https://www.linkedin.com/in/esparz4-gerardo",
+  github: "https://github.com/GerardoEsparza529",
+  resume: "#", // Add your resume link here
+};
+
+export const experience = [
+  {
+    id: 1,
+    company: "Darpha Fire Solutions",
+    position: "Ing. Software y Administrador de Sistemas",
+    period: "Mayo 2024 - Presente",
+    location: "México",
+    type: "Tiempo Completo",
+    description:
+      "Desarrollador Full Stack, Administrador de Servicios en la Nube y DevOps (Railway y AWS), Soporte Técnico, Capacitador de TI.",
+    responsibilities: [
+      "Arquitectura y Desarrollo de Software",
+      "Diseño e implementación de la arquitectura completa del sistema: modelos de base de datos, API REST, servicios backend e interfaz PWA responsiva",
+      "Construcción de una plataforma segura y escalable utilizando React, Vite, Node.js, Express, Sequelize y PostgreSQL",
+      "Creación de una base de datos relacional optimizada y una interfaz de usuario basada en componentes",
+      "Módulos para gestión de inventarios y maquinaria",
+      "Tableros (dashboards) para supervisores con métricas y analíticas",
+      "Firmas digitales, generador y escáner de códigos de barras/QR",
+      "Control de acceso basado en roles (RBAC), notificaciones por correo electrónico y modo claro/oscuro",
+      "Sistema completo para la gestión de reportes y formatos",
+      "Gestión del alojamiento para frontend, backend y base de datos en Railway",
+      "Administración de AWS S3 para el almacenamiento seguro y flujos de trabajo de archivos",
+      "Soporte técnico para usuarios internos y clientes (software, PC, dispositivos)",
+      "Realización de capacitación presencial para usuarios y creación de documentación",
+      "Levantamiento de requerimientos directamente con la gerencia y operaciones",
+      "Digitalización y automatización de flujos de trabajo manuales, reduciendo errores y tiempos de procesamiento",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "AWS S3",
+      "Railway",
+      "Express",
+      "Sequelize",
+      "JWT",
+      "Socket.IO",
+      "Postman",
+      "Azure",
+    ],
+    achievements: [
+      "Unificación de todos los procesos del sistema en una sola plataforma integrada",
+      "Reducción significativa de errores y tiempos de procesamiento mediante automatización",
+      "Implementación exitosa de sistema completo de gestión de mantenimiento",
+    ],
+  },
+];
+
+export const education = [
+  {
+    id: 1,
+    institution: "Universidad Politécnica de Aguascalientes",
+    degree: "Ingeniería en Sistemas Computacionales",
+    period: "2021 - 2025",
+    status: "Graduado",
+    location: "Aguascalientes, México",
+  },
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Darpha Maintenance App",
+    category: "Sistema Empresarial",
+    description:
+      "Sistema integral especializado en la gestión de mantenimiento de sistemas de protección contra incendios (extintores, rociadores, bombas, sistemas de detección, etc.) para plantas industriales.",
+    longDescription:
+      "Permite crear reportes digitales de inspecciones, gestionar pendientes con notificaciones automáticas, programar mantenimientos preventivos según normativas, administrar certificaciones profesionales del personal técnico, y supervisar el cumplimiento de estándares de protección contra incendios.",
+    image: "/projects/darpha-app.jpg",
+    gallery: {
+      desktop: [
+        "/projects/darpha/desktop/Dashboard - Desk Dark.png",
+        "/projects/darpha/desktop/Dashboard - Desk.png",
+        "/projects/darpha/desktop/Login - Mac.png",
+        "/projects/darpha/desktop/Login - Desk Dark.png",
+        "/projects/darpha/desktop/Profile - Desk.png",
+        "/projects/darpha/desktop/Profile - Desk Dark.png",
+        "/projects/darpha/desktop/Report View - Desk.png",
+        "/projects/darpha/desktop/Report View - Desk Dark.png",
+      ],
+      mobile: [
+        "/projects/darpha/movil/Dashboard - Mobile Dark.jpg",
+        "/projects/darpha/movil/Dashboard - Mobile.jpg",
+        "/projects/darpha/movil/Login - Mobile.jpg",
+        "/projects/darpha/movil/Login - Mobile Dark.jpg",
+        "/projects/darpha/movil/Profile - Mobile.jpg",
+        "/projects/darpha/movil/Profile - Mobile Dark.jpg",
+        "/projects/darpha/movil/Reporte View - Mobile.jpg",
+        "/projects/darpha/movil/Reporte View - Mobile Dark.jpg",
+      ],
+    },
+    technologies: {
+      backend: [
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Sequelize",
+        "JWT",
+        "AWS S3",
+        "Socket.IO",
+        "Node-cron",
+        "Swagger",
+        "Bcrypt",
+        "Helmet",
+      ],
+      frontend: [
+        "React 18",
+        "Material-UI",
+        "Axios",
+        "Socket.IO Client",
+        "Chart.js",
+        "jsPDF",
+        "html5-qrcode",
+        "React Toastify",
+        "Framer Motion",
+        "PWA",
+      ],
+      devops: ["Docker", "Railway", "Git"],
+    },
+    features: [
+      "Reportes digitales de inspecciones",
+      "Gestión de pendientes con notificaciones automáticas",
+      "Programación de mantenimientos preventivos",
+      "Administración de certificaciones profesionales",
+      "Supervisión de cumplimiento de estándares",
+      "Generación de códigos QR/Barras",
+      "Dashboard con métricas en tiempo real",
+      "Sistema de notificaciones push",
+      "Modo offline (PWA)",
+    ],
+    link: "https://app.darphafiresolutions.com/admin/plan-anual",
+    github: null,
+    status: "Completado",
+    year: "2024",
+  },
+  {
+    id: 2,
+    title: "KontrolAI",
+    category: "Fintech & IA",
+    description:
+      "Sistema completo de gestión financiera personal que utiliza inteligencia artificial para ayudar a usuarios a administrar sus finanzas.",
+    longDescription:
+      "Permite gestionar cuentas bancarias, tarjetas de crédito e inversiones; registrar y categorizar transacciones; crear presupuestos y metas de ahorro; programar pagos automáticos; obtener proyecciones financieras; y consultar un asistente virtual IA. Incluye extracción automática de transacciones desde PDFs de estados de cuenta bancarios mexicanos (BBVA, Nu).",
+    image: "/projects/kontrolai.jpg",
+    technologies: {
+      frontend: [
+        "React 19",
+        "Vite",
+        "TanStack Query",
+        "Zustand",
+        "React Router",
+        "Chart.js",
+        "Recharts",
+        "Axios",
+        "OpenAI SDK",
+        "Google OAuth",
+        "PWA",
+      ],
+      backend: [
+        "Node.js",
+        "Express",
+        "Prisma ORM",
+        "PostgreSQL",
+        "OpenAI API",
+        "JWT",
+        "Google Auth",
+        "Bcrypt",
+        "Multer",
+        "pdf2json",
+        "Node-cron",
+        "Helmet",
+      ],
+    },
+    features: [
+      "Gestión de cuentas bancarias y tarjetas",
+      "Categorización inteligente de transacciones",
+      "Presupuestos y metas de ahorro",
+      "Proyecciones financieras con IA",
+      "Asistente virtual financiero",
+      "Extracción automática de PDFs bancarios",
+      "Dashboards interactivos",
+      "Autenticación con Google OAuth",
+    ],
+    link: "https://kontrolai-production.up.railway.app",
+    github: null,
+    status: "Completado",
+    year: "2024",
+  },
+  {
+    id: 3,
+    title: "AccessAI",
+    category: "IoT & Computer Vision",
+    description:
+      "Sistema IoT integral de control de acceso que utiliza reconocimiento facial mediante inteligencia artificial de Azure.",
+    longDescription:
+      "Implementado con una Raspberry Pi como dispositivo de hardware (cámara, sensores y servomotor), una API REST robusta en Node.js y una interfaz web responsiva en React. El sistema permite control de apertura de puertas de forma automática mediante verificación facial o remota desde la aplicación web, con comunicación bidireccional a través de Azure IoT Hub.",
+    image: "/projects/accessai.jpg",
+    technologies: {
+      frontend: [
+        "React 19",
+        "Vite",
+        "Tailwind CSS",
+        "Framer Motion",
+        "React Router",
+        "React Hook Form",
+        "Zod",
+        "Recharts",
+        "Axios",
+        "TanStack Query",
+        "PWA",
+      ],
+      backend: [
+        "Node.js",
+        "Express",
+        "Azure Face API",
+        "Azure IoT Hub",
+        "Azure SQL",
+        "Azure Blob Storage",
+        "JWT",
+        "Bcrypt",
+        "Swagger",
+        "Winston",
+      ],
+      hardware: [
+        "Python 3",
+        "Raspberry Pi",
+        "Picamera2",
+        "RPi.GPIO",
+        "Azure IoT Device SDK",
+      ],
+      cloud: [
+        "Azure Face API",
+        "Azure IoT Hub",
+        "Azure SQL Database",
+        "Azure Blob Storage",
+      ],
+    },
+    features: [
+      "Reconocimiento facial con Azure Face API",
+      "Control automático de puertas",
+      "Sensores PIR, capacitivo y magnético",
+      "Comunicación bidireccional IoT Hub",
+      "Historial de accesos en tiempo real",
+      "Gestión de personas autorizadas",
+      "Dashboard con estadísticas",
+      "Control remoto desde web/móvil",
+    ],
+    link: "https://accessai-production.up.railway.app",
+    github: null,
+    status: "Completado",
+    year: "2024",
+  },
+  {
+    id: 4,
+    title: "WhatsApp AI Chatbot System",
+    category: "IA & Automatización",
+    description:
+      "Sistema completo de chatbot inteligente para WhatsApp con soporte multi-negocio.",
+    longDescription:
+      "Consta de tres componentes principales: Bot de WhatsApp con capacidades de IA que puede conectarse mediante Baileys (código abierto) o Meta API oficial. Incluye gestión de múltiples negocios, contexto conversacional, servicios de citas, integración con voz, y persistencia en PostgreSQL con soporte de embeddings (pgvector). Dashboard web interactivo para visualizar conversaciones, mensajes, estadísticas y gestionar el chatbot en tiempo real.",
+    image: "/projects/chatbot-whatsapp.jpg",
+    technologies: {
+      backend: [
+        "Node.js",
+        "@builderbot/bot",
+        "Baileys",
+        "Meta API",
+        "Google Generative AI",
+        "PostgreSQL",
+        "Sequelize",
+        "pgvector",
+        "Express",
+        "Socket.IO",
+        "FFmpeg",
+      ],
+      frontend: [
+        "React 19",
+        "Vite",
+        "Socket.IO Client",
+        "Axios",
+        "Lucide React",
+        "Font Awesome",
+        "CSS Modules",
+      ],
+      ai: ["Gemini 2.0", "Embeddings", "Búsqueda semántica"],
+    },
+    features: [
+      "Multi-provider (Baileys + Meta API)",
+      "Multi-negocio con contextos aislados",
+      "IA conversacional (Gemini 2.0)",
+      "Persistencia PostgreSQL",
+      "Búsqueda semántica con embeddings",
+      "WebSocket para tiempo real",
+      "Gestión de intervención humana",
+      "Sistema de citas/appointments",
+      "Procesamiento de voz",
+      "Dashboard administrativo interactivo",
+    ],
+    link: null,
+    github: null,
+    status: "Completado",
+    year: "2024",
+  },
+];
+
+export const skills = {
+  frontend: {
+    title: "Frontend",
+    icon: "FaPalette",
+    items: [
+      { name: "React 18/19", level: 95 },
+      { name: "JavaScript ES6+", level: 95 },
+      { name: "HTML5 / CSS3", level: 90 },
+      { name: "PWA", level: 85 },
+      { name: "Responsive Design", level: 90 },
+      { name: "Material-UI", level: 85 },
+      { name: "Tailwind CSS", level: 80 },
+      { name: "Framer Motion", level: 75 },
+    ],
+  },
+  backend: {
+    title: "Backend",
+    icon: "FaServer",
+    items: [
+      { name: "Node.js", level: 95 },
+      { name: "Express", level: 95 },
+      { name: "API RESTful", level: 95 },
+      { name: "Socket.IO", level: 85 },
+      { name: "JWT Auth", level: 90 },
+      { name: "Cron Jobs", level: 80 },
+    ],
+  },
+  database: {
+    title: "Bases de Datos",
+    icon: "FaDatabase",
+    items: [
+      { name: "PostgreSQL", level: 90 },
+      { name: "Sequelize ORM", level: 90 },
+      { name: "Prisma ORM", level: 85 },
+      { name: "SQL", level: 90 },
+      { name: "Database Design", level: 85 },
+    ],
+  },
+  cloud: {
+    title: "Cloud & DevOps",
+    icon: "FaCloud",
+    items: [
+      { name: "AWS S3", level: 85 },
+      { name: "Azure Services", level: 80 },
+      { name: "Docker", level: 75 },
+      { name: "Railway", level: 85 },
+      { name: "Git/GitHub", level: 90 },
+    ],
+  },
+  tools: {
+    title: "Herramientas",
+    icon: "FaTools",
+    items: [
+      { name: "VS Code", level: 95 },
+      { name: "Postman", level: 90 },
+      { name: "Git", level: 90 },
+      { name: "npm/yarn", level: 90 },
+      { name: "Swagger", level: 80 },
+    ],
+  },
+  security: {
+    title: "Seguridad",
+    icon: "FaLock",
+    items: [
+      { name: "Bcrypt", level: 90 },
+      { name: "Helmet", level: 85 },
+      { name: "CORS", level: 90 },
+      { name: "Rate Limiting", level: 80 },
+      { name: "OAuth 2.0", level: 85 },
+    ],
+  },
+};
+
+export const certifications = [
+  // Add your certifications here
+  // {
+  //   id: 1,
+  //   name: "Certification Name",
+  //   issuer: "Institution",
+  //   year: "2024",
+  //   credentialUrl: "#"
+  // }
+];
+
+export const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/GerardoEsparza529",
+    icon: "FaGithub",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/esparz4-gerardo",
+    icon: "FaLinkedin",
+  },
+  {
+    name: "Email",
+    url: "mailto:gerardo.esparz4@gmail.com",
+    icon: "FaEnvelope",
+  },
+];
