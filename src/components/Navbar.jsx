@@ -18,7 +18,7 @@ const Navbar = () => {
   ];
 
   const handleNavClick = (sectionId) => {
-    scrollToElement(sectionId, 60);
+    scrollToElement(sectionId, 0);
     setMobileMenuOpen(false);
   };
 
@@ -34,7 +34,10 @@ const Navbar = () => {
           }
         });
       },
-      { threshold: 0.3 }
+      {
+        threshold: 0.3,
+        rootMargin: "0px 0px 0px 0px"
+      }
     );
 
     sections.forEach((section) => {

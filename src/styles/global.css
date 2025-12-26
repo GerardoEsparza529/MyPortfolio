@@ -17,6 +17,11 @@ html {
     text-rendering: optimizeLegibility;
 }
 
+/* Scroll margin for sections to account for fixed navbar */
+section {
+    scroll-margin-top: 0px;
+}
+
 body {
     font-family: var(--font-primary);
     font-size: var(--text-base);

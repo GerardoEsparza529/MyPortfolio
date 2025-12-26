@@ -68,8 +68,8 @@ export const education = [
     id: 1,
     institution: "Universidad Politécnica de Aguascalientes",
     degree: "Ingeniería en Sistemas Computacionales",
-    period: "2021 - 2025",
-    status: "Graduado",
+    period: "2022 - 2025",
+    status: "Egresado",
     location: "Aguascalientes, México",
   },
 ];
