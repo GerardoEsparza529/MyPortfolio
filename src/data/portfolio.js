@@ -12,13 +12,15 @@ export const personalInfo = {
   email: "gerardo.esparz4@gmail.com",
   linkedin: "https://www.linkedin.com/in/esparz4-gerardo",
   github: "https://github.com/GerardoEsparza529",
-  resume: "#", // Add your resume link here
+  resumeSpanish: "/src/documents/Gerardo Esparza - CV Spanish.pdf",
+  resumeEnglish: "/src/documents/Gerardo Esparza - CV English.pdf",
 };
 
 export const experience = [
   {
     id: 1,
     company: "Darpha Fire Solutions",
+    logo: "/src/assets/darpha_logo.png",
     position: "Ing. Software y Administrador de Sistemas",
     period: "Mayo 2024 - Presente",
     location: "México",
@@ -67,6 +69,7 @@ export const education = [
   {
     id: 1,
     institution: "Universidad Politécnica de Aguascalientes",
+    logo: "/src/assets/upa_logo.png",
     degree: "Ingeniería en Sistemas Computacionales",
     period: "2022 - 2025",
     status: "Egresado",

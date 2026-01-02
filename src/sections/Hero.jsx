@@ -72,6 +72,25 @@ const Hero = () => {
             Contactar
           </button>
         </motion.div>
+
+        <motion.div className={styles.heroCv} variants={itemVariants}>
+          <a
+            href={personalInfo.resumeSpanish}
+            download="Gerardo Esparza - CV Spanish.pdf"
+            className={`${styles.cvButton} ${styles.cvSpanish}`}
+          >
+            <span>🇲🇽</span>
+            CV Español
+          </a>
+          <a
+            href={personalInfo.resumeEnglish}
+            download="Gerardo Esparza - CV English.pdf"
+            className={`${styles.cvButton} ${styles.cvEnglish}`}
+          >
+            <span>🇬🇧</span>
+            CV English
+          </a>
+        </motion.div>
       </motion.div>
 
       <motion.div

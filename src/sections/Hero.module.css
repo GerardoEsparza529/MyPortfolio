@@ -100,6 +100,42 @@
     transform: translateY(-2px);
 }
 
+.heroCv {
+    display: flex;
+    gap: var(--space-3);
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+    animation: fadeInUp 1s ease-out 0.8s backwards;
+}
+
+.cvButton {
+    padding: var(--space-3) var(--space-6);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-apple);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    text-decoration: none;
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.cvButton:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent);
+}
+
+.cvButton span {
+    font-size: var(--text-lg);
+}
+
 .heroScroll {
     position: absolute;
     bottom: var(--space-8);
@@ -279,6 +315,21 @@
         justify-content: center;
     }
 
+    .heroCv {
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-2);
+        margin-top: var(--space-3);
+    }
+
+    .cvButton {
+        width: 100%;
+        max-width: 320px;
+        padding: var(--space-3) var(--space-5);
+        font-size: var(--text-sm);
+        justify-content: center;
+    }
+
     .heroScroll {
         bottom: var(--space-6);
         font-size: var(--text-xs);
@@ -333,6 +384,16 @@
         max-width: 280px;
         padding: var(--space-3) var(--space-5);
         font-size: var(--text-sm);
+    }
+
+    .cvButton {
+        max-width: 280px;
+        padding: var(--space-2) var(--space-4);
+        font-size: var(--text-xs);
+    }
+
+    .cvButton span {
+        font-size: var(--text-base);
     }
 
     .circle1 {

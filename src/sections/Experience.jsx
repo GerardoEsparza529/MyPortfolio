@@ -62,6 +62,11 @@ const Experience = () => {
               <div className={styles.timelineDot} />
               <div className={styles.experienceCard}>
                 <div className={styles.cardHeader}>
+                  {exp.logo && (
+                    <div className={styles.companyLogo}>
+                      <img src={exp.logo} alt={`${exp.company} logo`} />
+                    </div>
+                  )}
                   <div className={styles.cardTitle}>
                     <h3 className={styles.position}>{exp.position}</h3>
                     <p className={styles.company}>{exp.company}</p>
@@ -141,14 +146,24 @@ const Experience = () => {
                 className={styles.educationCard}
                 variants={itemVariants}
               >
-                <div className={styles.educationIcon}>
-                  <FaGraduationCap />
+                <div className={styles.educationHeader}>
+                  {edu.logo ? (
+                    <div className={styles.institutionLogo}>
+                      <img src={edu.logo} alt={`${edu.institution} logo`} />
+                    </div>
+                  ) : (
+                    <div className={styles.educationIcon}>
+                      <FaGraduationCap />
+                    </div>
+                  )}
+                  <div className={styles.educationInfo}>
+                    <h3 className={styles.degree}>{edu.degree}</h3>
+                    <p className={styles.institution}>{edu.institution}</p>
+                    <p className={styles.educationPeriod}>
+                      {edu.period} • {edu.status}
+                    </p>
+                  </div>
                 </div>
-                <h3 className={styles.degree}>{edu.degree}</h3>
-                <p className={styles.institution}>{edu.institution}</p>
-                <p className={styles.educationPeriod}>
-                  {edu.period} • {edu.status}
-                </p>
               </motion.div>
             ))}
           </motion.div>

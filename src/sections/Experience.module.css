@@ -101,6 +101,26 @@
     gap: var(--space-4);
 }
 
+.companyLogo {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-border);
+}
+
+.companyLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 .cardTitle {
     flex: 1;
 }
@@ -254,38 +274,83 @@
     background-color: var(--color-bg-primary);
     border-radius: var(--radius-xl);
     padding: var(--space-8);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
     transition: all var(--transition-apple);
+    cursor: pointer;
 }
 
 .educationCard:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-2xl);
+}
+
+.educationHeader {
+    display: flex;
+    gap: var(--space-6);
+    align-items: flex-start;
 }
 
 .educationIcon {
     font-size: var(--text-5xl);
-    margin-bottom: var(--space-4);
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-border);
+}
+
+.institutionLogo {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    box-shadow: var(--shadow-md);
+    border: 2px solid var(--color-border);
+}
+
+.institutionLogo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.educationInfo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
 }
 
 .degree {
-    font-size: var(--text-xl);
+    font-size: var(--text-2xl);
     font-weight: var(--font-semibold);
     color: var(--color-text-primary);
-    margin-bottom: var(--space-2);
+    margin: 0;
     line-height: 1.3;
 }
 
 .institution {
-    font-size: var(--text-base);
+    font-size: var(--text-lg);
     color: var(--color-accent);
     font-weight: var(--font-medium);
-    margin-bottom: var(--space-3);
+    margin: 0;
 }
 
 .educationPeriod {
     font-size: var(--text-sm);
     color: var(--color-text-tertiary);
+    margin: 0;
+    font-weight: var(--font-medium);
 }
 
 /* Dark mode */
@@ -373,6 +438,12 @@
         gap: var(--space-3);
         align-items: flex-start;
         margin-bottom: var(--space-5);
+    }
+
+    .companyLogo {
+        width: 60px;
+        height: 60px;
+        padding: var(--space-2);
     }
 
     .period {
@@ -467,9 +538,26 @@
         padding: var(--space-6);
     }
 
+    .educationHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-4);
+    }
+
     .educationIcon {
         font-size: var(--text-4xl);
-        margin-bottom: var(--space-3);
+        width: 60px;
+        height: 60px;
+    }
+
+    .institutionLogo {
+        width: 60px;
+        height: 60px;
+        padding: var(--space-2);
+    }
+
+    .educationInfo {
+        gap: var(--space-2);
     }
 
     .degree {
@@ -499,11 +587,29 @@
         padding: var(--space-4);
     }
 
+    .companyLogo {
+        width: 50px;
+        height: 50px;
+        padding: var(--space-2);
+    }
+
     .position {
         font-size: var(--text-lg);
     }
 
     .educationCard {
         padding: var(--space-5);
+    }
+
+    .educationIcon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--text-3xl);
+    }
+
+    .institutionLogo {
+        width: 50px;
+        height: 50px;
+        padding: var(--space-2);
     }
 }
