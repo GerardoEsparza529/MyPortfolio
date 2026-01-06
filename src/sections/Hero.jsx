@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FaDownload } from "react-icons/fa";
 import { personalInfo } from "../data/portfolio";
 import { useSmoothScroll } from "../hooks";
 import styles from "./Hero.module.css";
@@ -60,14 +61,14 @@ const Hero = () => {
         <motion.div className={styles.heroCta} variants={itemVariants}>
           <button
             className={`${styles.ctaButton} ${styles.ctaPrimary}`}
-            onClick={() => scrollToElement("projects", 60)}
+            onClick={() => scrollToElement("projects", 0)}
           >
             Ver Proyectos
             <span>→</span>
           </button>
           <button
             className={`${styles.ctaButton} ${styles.ctaSecondary}`}
-            onClick={() => scrollToElement("contact", 60)}
+            onClick={() => scrollToElement("contact", 0)}
           >
             Contactar
           </button>
@@ -79,7 +80,7 @@ const Hero = () => {
             download="Gerardo Esparza - CV.pdf"
             className={`${styles.cvButton} ${styles.cvSpanish}`}
           >
-            <span>📄</span>
+            <FaDownload />
             Descargar CV
           </a>
         </motion.div>
@@ -90,7 +91,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        onClick={() => scrollToElement("about", 60)}
+        onClick={() => scrollToElement("about", 0)}
       >
         <span>Desliza para explorar</span>
         <span className={styles.scrollIcon}>↓</span>
