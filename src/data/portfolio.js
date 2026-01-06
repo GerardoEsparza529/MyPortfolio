@@ -1,4 +1,6 @@
 // Portfolio Data - Gerardo Esparza
+import darphaLogo from "../assets/darpha_logo.png";
+import upaLogo from "../assets/upa_logo.png";
 
 export const personalInfo = {
   name: "Gerardo Esparza",
@@ -20,7 +22,7 @@ export const experience = [
   {
     id: 1,
     company: "Darpha Fire Solutions",
-    logo: "/src/assets/darpha_logo.png",
+    logo: darphaLogo,
     position: "Ing. Software y Administrador de Sistemas",
     period: "Mayo 2024 - Presente",
     location: "México",
@@ -69,7 +71,7 @@ export const education = [
   {
     id: 1,
     institution: "Universidad Politécnica de Aguascalientes",
-    logo: "/src/assets/upa_logo.png",
+    logo: upaLogo,
     degree: "Ingeniería en Sistemas Computacionales",
     period: "2022 - 2025",
     status: "Egresado",

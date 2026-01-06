@@ -76,19 +76,11 @@ const Hero = () => {
         <motion.div className={styles.heroCv} variants={itemVariants}>
           <a
             href={personalInfo.resumeSpanish}
-            download="Gerardo Esparza - CV Spanish.pdf"
+            download="Gerardo Esparza - CV.pdf"
             className={`${styles.cvButton} ${styles.cvSpanish}`}
           >
-            <span>🇲🇽</span>
-            CV Español
-          </a>
-          <a
-            href={personalInfo.resumeEnglish}
-            download="Gerardo Esparza - CV English.pdf"
-            className={`${styles.cvButton} ${styles.cvEnglish}`}
-          >
-            <span>🇬🇧</span>
-            CV English
+            <span>📄</span>
+            Descargar CV
           </a>
         </motion.div>
       </motion.div>
