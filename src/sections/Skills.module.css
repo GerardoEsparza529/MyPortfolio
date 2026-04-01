@@ -104,19 +104,17 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .skills {
-        background-color: var(--color-bg-primary);
-    }
+:global([data-theme="dark"]) .skills {
+    background-color: var(--color-bg-primary);
+}
 
-    .skillItem {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
+:global([data-theme="dark"]) .skillItem {
+    background-color: rgba(255, 255, 255, 0.05);
+}
 
-    .skillItem:hover {
-        background-color: rgba(255, 255, 255, 0.08);
-        box-shadow: 0 4px 12px rgba(41, 151, 255, 0.2);
-    }
+:global([data-theme="dark"]) .skillItem:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 12px rgba(41, 151, 255, 0.2);
 }
 
 /* Responsive */

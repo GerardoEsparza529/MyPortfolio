@@ -130,10 +130,8 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .footer {
-        background-color: var(--color-bg-primary);
-    }
+:global([data-theme="dark"]) .footer {
+    background-color: var(--color-bg-primary);
 }
 
 /* Responsive */

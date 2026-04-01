@@ -142,18 +142,16 @@
 }
 
 /* Dark mode adjustments */
-@media (prefers-color-scheme: dark) {
-    .mobileFrame {
-        background: #1a1a1a;
-    }
+:global([data-theme="dark"]) .mobileFrame {
+    background: #1a1a1a;
+}
 
-    .desktopFrame {
-        background: #1a1a1a;
-    }
+:global([data-theme="dark"]) .desktopFrame {
+    background: #1a1a1a;
+}
 
-    .desktopTopBar {
-        background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
-    }
+:global([data-theme="dark"]) .desktopTopBar {
+    background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%);
 }
 
 /* Responsive */

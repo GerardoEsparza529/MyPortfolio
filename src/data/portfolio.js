@@ -73,7 +73,7 @@ export const education = [
     institution: "Universidad Politécnica de Aguascalientes",
     logo: upaLogo,
     degree: "Ingeniería en Sistemas Computacionales",
-    period: "2022 - 2025",
+    period: "2022 - 2026",
     status: "Egresado",
     location: "Aguascalientes, México",
   },

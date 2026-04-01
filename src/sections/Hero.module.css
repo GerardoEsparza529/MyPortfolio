@@ -242,25 +242,23 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .hero {
-        background: linear-gradient(135deg, #000000 0%, #1d1d1f 100%);
-    }
+:global([data-theme="dark"]) .hero {
+    background: linear-gradient(135deg, #000000 0%, #1d1d1f 100%);
+}
 
-    .heroGradientText {
-        background: linear-gradient(135deg, #f5f5f7 0%, #a1a1a6 50%, #2997ff 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+:global([data-theme="dark"]) .heroGradientText {
+    background: linear-gradient(135deg, #f5f5f7 0%, #a1a1a6 50%, #2997ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-    .ctaPrimary {
-        box-shadow: 0 4px 14px rgba(41, 151, 255, 0.3);
-    }
+:global([data-theme="dark"]) .ctaPrimary {
+    box-shadow: 0 4px 14px rgba(41, 151, 255, 0.3);
+}
 
-    .ctaPrimary:hover {
-        box-shadow: 0 6px 20px rgba(41, 151, 255, 0.4);
-    }
+:global([data-theme="dark"]) .ctaPrimary:hover {
+    box-shadow: 0 6px 20px rgba(41, 151, 255, 0.4);
 }
 
 /* Responsive */

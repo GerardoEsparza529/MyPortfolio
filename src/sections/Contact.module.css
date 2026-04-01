@@ -1,6 +1,6 @@
 .contact {
     padding: var(--space-32) var(--space-6);
-    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    background-color: var(--color-bg-primary);
     position: relative;
     overflow: hidden;
 }
@@ -240,14 +240,12 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .contact {
-        background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
-    }
+:global([data-theme="dark"]) .contact {
+    background: linear-gradient(135deg, var(--color-bg-secondary) 0%, var(--color-bg-primary) 100%);
+}
 
-    .submitButton:hover {
-        box-shadow: 0 6px 20px rgba(41, 151, 255, 0.4);
-    }
+:global([data-theme="dark"]) .submitButton:hover {
+    box-shadow: 0 6px 20px rgba(41, 151, 255, 0.4);
 }
 
 /* Responsive */

@@ -78,6 +78,34 @@
     font-weight: var(--font-medium);
 }
 
+.navActions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.themeToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    font-size: var(--text-lg);
+    transition: all var(--transition-apple);
+    padding: 0;
+}
+
+.themeToggle:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-text-tertiary);
+    background-color: var(--color-bg-secondary);
+}
+
 .mobileMenuButton {
     display: none;
     background: none;
@@ -93,15 +121,13 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .navbar {
-        background-color: rgba(0, 0, 0, 0.72);
-        border-bottom-color: rgba(255, 255, 255, 0.1);
-    }
+:global([data-theme="dark"]) .navbar {
+    background-color: rgba(0, 0, 0, 0.72);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+}
 
-    .navbar.scrolled {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
+:global([data-theme="dark"]) .navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* Mobile Responsive */
@@ -111,7 +137,7 @@
     }
 
     .mobileMenuButton {
-        display: block;
+        display: flex;
     }
 
     .mobileMenu {

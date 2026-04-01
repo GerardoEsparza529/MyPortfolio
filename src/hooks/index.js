@@ -50,7 +50,7 @@ export const useInView = (options = {}) => {
       {
         threshold: 0.1,
         ...options,
-      }
+      },
     );
 
     observer.observe(ref);
@@ -70,7 +70,7 @@ export const useInView = (options = {}) => {
  */
 export const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(
-    () => window.matchMedia(query).matches
+    () => window.matchMedia(query).matches,
   );
 
   useEffect(() => {
@@ -115,6 +115,30 @@ export const useSmoothScroll = () => {
   };
 
   return scrollToElement;
+};
+
+/**
+ * Custom hook for theme switching (light/dark)
+ */
+export const useTheme = () => {
+  const [theme, setTheme] = useState(() => {
+    const stored = localStorage.getItem("theme");
+    if (stored) return stored;
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
+  return { theme, toggleTheme };
 };
 
 /**

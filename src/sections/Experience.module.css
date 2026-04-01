@@ -354,27 +354,13 @@
 }
 
 /* Dark mode */
-@media (prefers-color-scheme: dark) {
-    .experience {
-        background-color: var(--color-bg-primary);
-    }
+:global([data-theme="dark"]) .experience {
+    background-color: var(--color-bg-primary);
+}
 
-    .timelineDot {
-        border-color: var(--color-bg-primary);
-        box-shadow: 0 0 0 4px rgba(41, 151, 255, 0.2);
-    }
-
-    @keyframes pulse {
-
-        0%,
-        100% {
-            box-shadow: 0 0 0 4px rgba(41, 151, 255, 0.2);
-        }
-
-        50% {
-            box-shadow: 0 0 0 8px rgba(41, 151, 255, 0.1);
-        }
-    }
+:global([data-theme="dark"]) .timelineDot {
+    border-color: var(--color-bg-primary);
+    box-shadow: 0 0 0 4px rgba(41, 151, 255, 0.2);
 }
 
 /* Responsive */

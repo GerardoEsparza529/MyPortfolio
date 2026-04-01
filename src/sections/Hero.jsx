@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
 import { personalInfo } from "../data/portfolio";
 import { useSmoothScroll } from "../hooks";
 import styles from "./Hero.module.css";
@@ -64,7 +63,6 @@ const Hero = () => {
             onClick={() => scrollToElement("projects", 0)}
           >
             Ver Proyectos
-            <span>→</span>
           </button>
           <button
             className={`${styles.ctaButton} ${styles.ctaSecondary}`}
@@ -72,17 +70,6 @@ const Hero = () => {
           >
             Contactar
           </button>
-        </motion.div>
-
-        <motion.div className={styles.heroCv} variants={itemVariants}>
-          <a
-            href={personalInfo.resumeSpanish}
-            download="Gerardo Esparza - CV.pdf"
-            className={`${styles.cvButton} ${styles.cvSpanish}`}
-          >
-            <FaDownload />
-            Descargar CV
-          </a>
         </motion.div>
       </motion.div>
 

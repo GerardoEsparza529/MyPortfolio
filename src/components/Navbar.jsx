@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { useScrollPosition, useSmoothScroll } from "../hooks";
+import { HiOutlineSun, HiOutlineMoon } from "react-icons/hi2";
+import { useScrollPosition, useSmoothScroll, useTheme } from "../hooks";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
   const { scrollPosition, scrollDirection } = useScrollPosition();
   const scrollToElement = useSmoothScroll();
+  const { theme, toggleTheme } = useTheme();
   const [activeSection, setActiveSection] = useState("home");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -36,8 +38,8 @@ const Navbar = () => {
       },
       {
         threshold: 0.3,
-        rootMargin: "0px 0px 0px 0px"
-      }
+        rootMargin: "0px 0px 0px 0px",
+      },
     );
 
     sections.forEach((section) => {
@@ -99,14 +101,29 @@ const Navbar = () => {
             ))}
           </ul>
 
-          {/* Mobile Menu Button */}
-          <button
-            className={styles.mobileMenuButton}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? "✕" : "☰"}
-          </button>
+          <div className={styles.navActions}>
+            {/* Theme Toggle */}
+            <button
+              className={styles.themeToggle}
+              onClick={toggleTheme}
+              aria-label={
+                theme === "dark"
+                  ? "Cambiar a modo claro"
+                  : "Cambiar a modo oscuro"
+              }
+            >
+              {theme === "dark" ? <HiOutlineSun /> : <HiOutlineMoon />}
+            </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              className={styles.mobileMenuButton}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileMenuOpen ? "✕" : "☰"}
+            </button>
+          </div>
         </div>
       </nav>
 

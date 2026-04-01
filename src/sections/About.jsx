@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { FaRocket, FaCloud, FaBullseye, FaUser } from "react-icons/fa";
+import { FaRocket, FaCloud, FaBullseye } from "react-icons/fa";
 import { personalInfo } from "../data/portfolio";
 import styles from "./About.module.css";
 
@@ -72,18 +72,6 @@ const About = () => {
           initial="hidden"
           animate={inView ? "visible" : "hidden"}
         >
-          <motion.div className={styles.aboutImage} variants={itemVariants}>
-            <div className={styles.imageWrapper}>
-              {/* Placeholder for profile image */}
-              <div className={styles.placeholder}>
-                <FaUser />
-              </div>
-              {/* Uncomment and add your image */}
-              {/* <img src="/path/to/your/photo.jpg" alt={personalInfo.name} /> */}
-            </div>
-            <div className={styles.imageBorder} />
-          </motion.div>
-
           <motion.div className={styles.aboutText} variants={itemVariants}>
             <div>
               <h3 className={styles.aboutTitle}>{personalInfo.name}</h3>
@@ -121,11 +109,11 @@ const About = () => {
           animate={inView ? "visible" : "hidden"}
         >
           <motion.div className={styles.statItem} variants={itemVariants}>
-            <span className={styles.statNumber}>4+</span>
+            <span className={styles.statNumber}>6+</span>
             <span className={styles.statLabel}>Proyectos</span>
           </motion.div>
           <motion.div className={styles.statItem} variants={itemVariants}>
-            <span className={styles.statNumber}>1+</span>
+            <span className={styles.statNumber}>2+</span>
             <span className={styles.statLabel}>Años Experiencia</span>
           </motion.div>
           <motion.div className={styles.statItem} variants={itemVariants}>
