@@ -78,7 +78,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        onClick={() => scrollToElement("about", 0)}
+        onClick={() => scrollToElement("projects", 0)}
       >
         <span>Desliza para explorar</span>
         <span className={styles.scrollIcon}>↓</span>

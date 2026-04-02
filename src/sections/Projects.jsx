@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useTheme } from "../hooks";
 import {
   FaBuilding,
   FaCoins,
@@ -16,10 +17,20 @@ import styles from "./Projects.module.css";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const { theme } = useTheme();
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   });
+
+  const getImageForTheme = (images) => {
+    if (!images || images.length === 0) return null;
+    const darkMode = theme === "dark";
+    const filtered = images.filter((img) =>
+      darkMode ? img.includes("Dark") : !img.includes("Dark"),
+    );
+    return filtered[0] || images[0];
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -88,6 +99,12 @@ const Projects = () => {
           {projects.map((project, index) => {
             const isFeatured = index === 0;
             const techs = getTechStack(project);
+            const desktopImage = project.gallery
+              ? getImageForTheme(project.gallery.desktop)
+              : null;
+            const mobileImage = project.gallery
+              ? getImageForTheme(project.gallery.mobile)
+              : null;
 
             return (
               <motion.div
@@ -102,13 +119,15 @@ const Projects = () => {
                     <div className={styles.imagePreview}>
                       <div className={styles.desktopMockup}>
                         <img
-                          src={project.gallery.desktop[0]}
+                          key={`desktop-${theme}`}
+                          src={desktopImage}
                           alt={`${project.title} - Desktop`}
                         />
                       </div>
                       <div className={styles.mobileMockup}>
                         <img
-                          src={project.gallery.mobile[0]}
+                          key={`mobile-${theme}`}
+                          src={mobileImage}
                           alt={`${project.title} - Mobile`}
                         />
                       </div>
@@ -128,7 +147,7 @@ const Projects = () => {
                   )}
                   <div
                     className={`${styles.projectStatus} ${getStatusClass(
-                      project.status
+                      project.status,
                     )}`}
                   >
                     {project.status}
@@ -174,50 +193,16 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className={styles.projectLinks}>
-                    {project.gallery && (
+                  {project.gallery && (
+                    <div className={styles.projectAction}>
                       <button
                         onClick={() => setSelectedProject(project)}
-                        className={`${styles.projectLink} ${styles.linkGallery}`}
+                        className={styles.galleryButton}
                       >
                         <FaImages /> Ver Galería
                       </button>
-                    )}
-
-                    {project.link ? (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.projectLink} ${styles.linkPrimary}`}
-                      >
-                        Ver Proyecto →
-                      </a>
-                    ) : (
-                      <span
-                        className={`${styles.projectLink} ${styles.linkPrimary} ${styles.linkDisabled}`}
-                      >
-                        Privado
-                      </span>
-                    )}
-
-                    {project.github ? (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${styles.projectLink} ${styles.linkSecondary}`}
-                      >
-                        GitHub
-                      </a>
-                    ) : (
-                      <span
-                        className={`${styles.projectLink} ${styles.linkSecondary} ${styles.linkDisabled}`}
-                      >
-                        Código Privado
-                      </span>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             );

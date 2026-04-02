@@ -164,6 +164,34 @@ export const projects = [
     longDescription:
       "Permite gestionar cuentas bancarias, tarjetas de crédito e inversiones; registrar y categorizar transacciones; crear presupuestos y metas de ahorro; programar pagos automáticos; obtener proyecciones financieras; y consultar un asistente virtual IA. Incluye extracción automática de transacciones desde PDFs de estados de cuenta bancarios mexicanos (BBVA, Nu).",
     image: "/projects/kontrolai.jpg",
+    gallery: {
+      desktop: [
+        "/projects/kontrolai/desktop/Dashboard - Desk Dark.png",
+        "/projects/kontrolai/desktop/Dashboard - Desk.png",
+        "/projects/kontrolai/desktop/Accounts - Desk Dark.png",
+        "/projects/kontrolai/desktop/Accounts - Desk.png",
+        "/projects/kontrolai/desktop/Transactions - Desk Dark.png",
+        "/projects/kontrolai/desktop/Transactions - Desk.png",
+        "/projects/kontrolai/desktop/Budgets - Desk Dark.png",
+        "/projects/kontrolai/desktop/Budgets - Desk.png",
+        "/projects/kontrolai/desktop/Goals - Desk Dark.png",
+        "/projects/kontrolai/desktop/Goals - Desk.png",
+        "/projects/kontrolai/desktop/Projections - Desk Dark.png",
+        "/projects/kontrolai/desktop/Projections - Desk.png",
+        "/projects/kontrolai/desktop/Accounts Credit Automatic Payments - Desk Dark.png",
+        "/projects/kontrolai/desktop/Accounts Credit Automatic Payments - Desk.png",
+        "/projects/kontrolai/desktop/Schedule Transactions - Desk Dark.png",
+        "/projects/kontrolai/desktop/Schedule Transactions - Desk.png",
+        "/projects/kontrolai/desktop/Settings - Desk Dark.png",
+        "/projects/kontrolai/desktop/Settings - Desk.png",
+        "/projects/kontrolai/desktop/Login - Desk Dark.png",
+        "/projects/kontrolai/desktop/Login - Desk.png",
+      ],
+      mobile: [
+        "/projects/kontrolai/movil/Dashboard - Movil Dark.jpeg",
+        "/projects/kontrolai/movil/Dashboard - Movil.jpeg",
+      ],
+    },
     technologies: {
       frontend: [
         "React 19",
@@ -217,6 +245,16 @@ export const projects = [
     longDescription:
       "Implementado con una Raspberry Pi como dispositivo de hardware (cámara, sensores y servomotor), una API REST robusta en Node.js y una interfaz web responsiva en React. El sistema permite control de apertura de puertas de forma automática mediante verificación facial o remota desde la aplicación web, con comunicación bidireccional a través de Azure IoT Hub.",
     image: "/projects/accessai.jpg",
+    gallery: {
+      desktop: [
+        "/projects/accessai/desktop/Dashboard - Desk Dark.png",
+        "/projects/accessai/desktop/Dashboard - Desk.png",
+      ],
+      mobile: [
+        "/projects/accessai/movil/Dashboard - Movil Dark.jpeg",
+        "/projects/accessai/movil/Dashboard - Movil.jpeg",
+      ],
+    },
     technologies: {
       frontend: [
         "React 19",
@@ -281,6 +319,16 @@ export const projects = [
     longDescription:
       "Consta de tres componentes principales: Bot de WhatsApp con capacidades de IA que puede conectarse mediante Baileys (código abierto) o Meta API oficial. Incluye gestión de múltiples negocios, contexto conversacional, servicios de citas, integración con voz, y persistencia en PostgreSQL con soporte de embeddings (pgvector). Dashboard web interactivo para visualizar conversaciones, mensajes, estadísticas y gestionar el chatbot en tiempo real.",
     image: "/projects/chatbot-whatsapp.jpg",
+    gallery: {
+      desktop: [
+        "/projects/chatbot/desktop/Dashboard - Desk Dark.png",
+        "/projects/chatbot/desktop/Dashboard - Desk.png",
+      ],
+      mobile: [
+        "/projects/chatbot/movil/Dashboard - Movil Dark.jpeg",
+        "/projects/chatbot/movil/Dashboard - Movil.jpeg",
+      ],
+    },
     technologies: {
       backend: [
         "Node.js",

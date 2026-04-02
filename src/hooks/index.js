@@ -134,8 +134,35 @@ export const useTheme = () => {
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  useEffect(() => {
+    // Listen for storage changes from other components
+    const handleStorageChange = (e) => {
+      if (e.key === "theme" && e.newValue && e.newValue !== theme) {
+        setTheme(e.newValue);
+      }
+    };
+    
+    // Listen for custom event from same tab
+    const handleThemeChange = (e) => {
+      if (e.detail !== theme) {
+        setTheme(e.detail);
+      }
+    };
+    
+    window.addEventListener("storage", handleStorageChange);
+    window.addEventListener("themechange", handleThemeChange);
+    
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+      window.removeEventListener("themechange", handleThemeChange);
+    };
+  }, [theme]);
+
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    const newTheme = theme === "dark" ? "light" : "dark";
+    setTheme(newTheme);
+    // Dispatch event for other components in same tab
+    window.dispatchEvent(new CustomEvent("themechange", { detail: newTheme }));
   };
 
   return { theme, toggleTheme };

@@ -1,31 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import { useTheme } from "../hooks";
 import DeviceMockup from "./DeviceMockup";
 import styles from "./ProjectGallery.module.css";
 
 const ProjectGallery = ({ images, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [deviceType, setDeviceType] = useState("desktop");
-  const [darkMode, setDarkMode] = useState(false);
-
-  useEffect(() => {
-    // Detect dark mode
-    const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    setDarkMode(isDark);
-
-    // Listen for dark mode changes
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-    const handler = (e) => setDarkMode(e.matches);
-    mediaQuery.addEventListener("change", handler);
-    return () => mediaQuery.removeEventListener("change", handler);
-  }, []);
+  const { theme } = useTheme();
+  const darkMode = theme === "dark";
 
   // Get current images based on device type and theme
   const getCurrentImages = () => {
     const typeImages = images[deviceType] || [];
     return typeImages.filter((img) =>
-      darkMode ? img.includes("Dark") : !img.includes("Dark")
+      darkMode ? img.includes("Dark") : !img.includes("Dark"),
     );
   };
 
@@ -38,7 +28,7 @@ const ProjectGallery = ({ images, onClose }) => {
 
   const prevImage = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? currentImages.length - 1 : prev - 1
+      prev === 0 ? currentImages.length - 1 : prev - 1,
     );
   };
 

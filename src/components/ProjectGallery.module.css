@@ -4,7 +4,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: var(--color-gallery-overlay);
     backdrop-filter: blur(10px);
     z-index: 9999;
     display: flex;
@@ -113,7 +113,7 @@
     align-items: center;
     justify-content: center;
     border: none;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--color-gallery-nav);
     backdrop-filter: blur(10px);
     color: white;
     font-size: var(--text-xl);
@@ -124,7 +124,7 @@
 }
 
 .navBtn:hover:not(:disabled) {
-    background: rgba(0, 0, 0, 0.7);
+    background: var(--color-gallery-nav-hover);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -183,11 +183,6 @@
     font-weight: var(--font-medium);
     min-width: 60px;
     text-align: right;
-}
-
-/* Dark mode */
-:global([data-theme="dark"]) .overlay {
-    background: rgba(0, 0, 0, 0.98);
 }
 
 /* Responsive */
