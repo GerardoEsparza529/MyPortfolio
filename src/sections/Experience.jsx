@@ -1,10 +1,18 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { FaGraduationCap, FaTrophy, FaCheck } from "react-icons/fa";
+import { useSmoothScroll } from "../hooks";
 import { experience, education } from "../data/portfolio";
 import styles from "./Experience.module.css";
 
 const Experience = () => {
+  const scrollToElement = useSmoothScroll();
+
+  const openWhatsApp = (message) => {
+    const whatsappUrl = `https://wa.me/524493465877?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -168,6 +176,37 @@ const Experience = () => {
             ))}
           </motion.div>
         </div>
+
+        <motion.div
+          className={styles.experienceCta}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.35 }}
+        >
+          <p className={styles.experienceCtaTitle}>
+            Disponible para proyectos freelance, implementaciones IA y colaboraciones remotas
+          </p>
+          <div className={styles.experienceCtaActions}>
+            <button
+              type="button"
+              className={styles.experienceCtaPrimary}
+              onClick={() =>
+                openWhatsApp(
+                  "Hola Gerardo, me interesa iniciar una conversacion para colaborar contigo.\n\nNombre:\nEmpresa o negocio:\nTipo de proyecto:\nNecesidad principal:\nPlazo esperado:",
+                )
+              }
+            >
+              Iniciar conversacion
+            </button>
+            <button
+              type="button"
+              className={styles.experienceCtaSecondary}
+              onClick={() => scrollToElement("contact", 0)}
+            >
+              Agendar por email
+            </button>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

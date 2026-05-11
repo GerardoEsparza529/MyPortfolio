@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useTheme } from "../hooks";
+import { useTheme, useSmoothScroll } from "../hooks";
 import {
   FaBuilding,
   FaCoins,
@@ -18,6 +18,13 @@ import styles from "./Projects.module.css";
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const { theme } = useTheme();
+  const scrollToElement = useSmoothScroll();
+
+  const openWhatsApp = (message) => {
+    const whatsappUrl = `https://wa.me/524493465877?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+  };
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -208,6 +215,38 @@ const Projects = () => {
             );
           })}
         </motion.div>
+
+        <motion.div
+          className={styles.projectsCta}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <p className={styles.projectsCtaText}>
+            ¿Quieres una solucion como estas para tu negocio?
+          </p>
+          <div className={styles.projectsCtaActions}>
+            <button
+              type="button"
+              className={styles.projectsCtaPrimary}
+              onClick={() =>
+                openWhatsApp(
+                  "Hola Gerardo, quiero una propuesta para mi proyecto.\n\nNombre:\nEmpresa o negocio:\nQue problema quieres resolver:\nFuncionalidades clave:\nPresupuesto estimado:\nFecha objetivo:",
+                )
+              }
+            >
+              Quiero mi propuesta
+            </button>
+            <button
+              type="button"
+              className={styles.projectsCtaSecondary}
+              onClick={() => scrollToElement("contact", 0)}
+            >
+              Enviar brief por email
+            </button>
+          </div>
+        </motion.div>
+
         {selectedProject && selectedProject.gallery && (
           <ProjectGallery
             images={selectedProject.gallery}
