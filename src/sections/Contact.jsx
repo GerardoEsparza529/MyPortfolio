@@ -23,6 +23,8 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     setFormData({
@@ -31,15 +33,57 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Create mailto link with form data
-    const mailtoLink = `mailto:${
-      personalInfo.email
-    }?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Nombre: ${formData.name}\nEmail: ${formData.email}\n\nMensaje:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
+
+    setIsSubmitting(true);
+    setSubmitStatus({ type: "", message: "" });
+
+    try {
+      const response = await fetch(
+        `https://formsubmit.co/ajax/${personalInfo.email}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            _subject: formData.subject,
+            message: formData.message,
+            _template: "table",
+            _captcha: "false",
+          }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("No se pudo enviar el formulario");
+      }
+
+      setSubmitStatus({
+        type: "success",
+        message:
+          "Mensaje enviado correctamente. Revisa tu correo para confirmar la activacion de FormSubmit si es la primera vez.",
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch {
+      setSubmitStatus({
+        type: "error",
+        message:
+          "No se pudo enviar el mensaje. Intenta de nuevo o escribeme directo a gerardo.esparz4@gmail.com.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -250,10 +294,26 @@ const Contact = () => {
                 />
               </div>
 
-              <button type="submit" className={styles.submitButton}>
-                Enviar Mensaje
+              <button
+                type="submit"
+                className={styles.submitButton}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Enviando..." : "Enviar Mensaje"}
                 <span>→</span>
               </button>
+
+              {submitStatus.message && (
+                <p
+                  className={`${styles.submitStatus} ${
+                    submitStatus.type === "success"
+                      ? styles.submitSuccess
+                      : styles.submitError
+                  }`}
+                >
+                  {submitStatus.message}
+                </p>
+              )}
             </form>
           </motion.div>
         </motion.div>

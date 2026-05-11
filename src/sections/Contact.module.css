@@ -219,6 +219,21 @@
     transform: none;
 }
 
+.submitStatus {
+    margin-top: var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    line-height: 1.5;
+}
+
+.submitSuccess {
+    color: #16a34a;
+}
+
+.submitError {
+    color: #ef4444;
+}
+
 /* Background decorative element */
 .contactBackground {
     position: absolute;
