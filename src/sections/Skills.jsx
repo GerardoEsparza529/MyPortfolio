@@ -7,6 +7,7 @@ import {
   FaCloud,
   FaTools,
   FaLock,
+  FaRobot,
 } from "react-icons/fa";
 import { skills } from "../data/portfolio";
 import styles from "./Skills.module.css";
@@ -25,6 +26,7 @@ const Skills = () => {
       FaCloud: <FaCloud />,
       FaTools: <FaTools />,
       FaLock: <FaLock />,
+      FaRobot: <FaRobot />,
     };
     return icons[iconName] || null;
   };

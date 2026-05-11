@@ -20,6 +20,46 @@ export const personalInfo = {
 
 export const experience = [
   {
+    id: 2,
+    company: "Freelance",
+    logo: null,
+    position: "Desarrollador Full Stack & Consultor Tecnológico",
+    period: "2024 - Presente",
+    location: "Aguascalientes, México",
+    type: "Freelance",
+    description:
+      "Desarrollo de soluciones tecnológicas end-to-end para negocios y proyectos personales: desde sistemas con inteligencia artificial e IoT hasta sitios web comerciales con automatizaciones avanzadas.",
+    responsibilities: [
+      "Diseño e implementación de arquitecturas completas (frontend, backend, base de datos y cloud)",
+      "Integración de modelos de IA (OpenAI, Gemini, Azure Face API) en aplicaciones de producción",
+      "Desarrollo de sistemas IoT con Raspberry Pi y comunicación bidireccional vía Azure IoT Hub",
+      "Construcción de chatbots de WhatsApp multi-negocio con contexto conversacional y voz",
+      "Desarrollo de sitio web comercial con sistema de cotizaciones y reservas automatizadas con IA",
+      "Levantamiento de requerimientos y entrega de productos funcionales listos para producción",
+      "Administración de deploys en Railway, Azure y Vercel",
+    ],
+    technologies: [
+      "React",
+      "Node.js",
+      "PostgreSQL",
+      "OpenAI API",
+      "Gemini AI",
+      "Azure",
+      "Raspberry Pi",
+      "Baileys",
+      "Socket.IO",
+      "Prisma",
+      "Tailwind CSS",
+      "Astro",
+    ],
+    achievements: [
+      "KontrolAI: Sistema fintech con IA para gestión financiera personal, extracción automática de PDFs bancarios (BBVA, Nu) y asistente virtual",
+      "AccessAI: Sistema IoT de control de acceso con reconocimiento facial (Azure Face API) y Raspberry Pi",
+      "WhatsApp AI Chatbot: Plataforma multi-negocio con Gemini 2.0, embeddings semánticos y dashboard en tiempo real",
+      "Clean Car Club Ags: Sitio web (cleancarclubags.com) con sistema de cotizaciones y reservas automatizadas mediante agentes de IA",
+    ],
+  },
+  {
     id: 1,
     company: "Darpha Fire Solutions",
     logo: darphaLogo,
@@ -371,21 +411,72 @@ export const projects = [
     status: "Completado",
     year: "2024",
   },
+  {
+    id: 5,
+    title: "Clean Car Club Aguascalientes",
+    category: "Web & IA",
+    description:
+      "Sitio web comercial para negocio de detallado automotriz premium con sistema de cotizaciones y reservas automatizadas mediante agentes de IA.",
+    longDescription:
+      "Plataforma web completa para Clean Car Club Aguascalientes, negocio de detallado automotriz premium. Incluye catálogo de servicios y paquetes, planes recurrentes, galería de trabajos realizados, sección de testimonios y sistema de cotizaciones y reservas automatizadas. Los agentes de IA guían al usuario para obtener una cotización personalizada según el tipo de vehículo y servicio, y permiten agendar citas directamente desde la web o WhatsApp.",
+    image: null,
+    gallery: {
+      desktop: [
+        "/projects/cleancarclub/desktop/Hero - Desk.png",
+        "/projects/cleancarclub/desktop/Paquetes - Desk.png",
+      ],
+      mobile: [
+        "/projects/cleancarclub/movil/Hero - Movil.jpeg",
+      ],
+    },
+    technologies: {
+      frontend: [
+        "Astro",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+      ],
+      backend: [
+        "Node.js",
+        "Agentes de IA",
+        "Google Generative AI",
+      ],
+      other: [
+        "WhatsApp Business API",
+        "Vercel",
+      ],
+    },
+    features: [
+      "Catálogo de servicios con precios dinámicos por tipo de vehículo",
+      "Planes recurrentes semanales, quincenales y mensuales",
+      "Galería de trabajos antes/después",
+      "Agente de IA para cotizaciones personalizadas",
+      "Sistema de reservas automatizadas",
+      "Integración con WhatsApp para agendar citas",
+      "Sección de testimonios con calificaciones verificadas",
+      "Diseño responsivo mobile-first",
+    ],
+    link: "https://www.cleancarclubags.com",
+    github: null,
+    status: "Producción",
+    year: "2025",
+  },
 ];
 
 export const skills = {
-  frontend: {
-    title: "Frontend",
-    icon: "FaPalette",
+  ai: {
+    title: "Inteligencia Artificial",
+    icon: "FaRobot",
     items: [
-      { name: "React 18/19", level: 95 },
-      { name: "JavaScript ES6+", level: 95 },
-      { name: "HTML5 / CSS3", level: 90 },
-      { name: "PWA", level: 85 },
-      { name: "Responsive Design", level: 90 },
-      { name: "Material-UI", level: 85 },
-      { name: "Tailwind CSS", level: 80 },
-      { name: "Framer Motion", level: 75 },
+      { name: "OpenAI API", level: 90 },
+      { name: "Google Gemini", level: 85 },
+      { name: "Claude (Anthropic)", level: 85 },
+      { name: "Agentes de IA", level: 85 },
+      { name: "Prompt Engineering", level: 85 },
+      { name: "Embeddings & pgvector", level: 80 },
+      { name: "Búsqueda Semántica", level: 80 },
+      { name: "Azure Face API", level: 80 },
+      { name: "Azure IoT Hub", level: 80 },
     ],
   },
   backend: {
@@ -400,15 +491,18 @@ export const skills = {
       { name: "Cron Jobs", level: 80 },
     ],
   },
-  database: {
-    title: "Bases de Datos",
-    icon: "FaDatabase",
+  frontend: {
+    title: "Frontend",
+    icon: "FaPalette",
     items: [
-      { name: "PostgreSQL", level: 90 },
-      { name: "Sequelize ORM", level: 90 },
-      { name: "Prisma ORM", level: 85 },
-      { name: "SQL", level: 90 },
-      { name: "Database Design", level: 85 },
+      { name: "React 18/19", level: 95 },
+      { name: "JavaScript ES6+", level: 95 },
+      { name: "HTML5 / CSS3", level: 90 },
+      { name: "PWA", level: 85 },
+      { name: "Responsive Design", level: 90 },
+      { name: "Material-UI", level: 85 },
+      { name: "Tailwind CSS", level: 80 },
+      { name: "Framer Motion", level: 75 },
     ],
   },
   cloud: {
@@ -422,15 +516,15 @@ export const skills = {
       { name: "Git/GitHub", level: 90 },
     ],
   },
-  tools: {
-    title: "Herramientas",
-    icon: "FaTools",
+  database: {
+    title: "Bases de Datos",
+    icon: "FaDatabase",
     items: [
-      { name: "VS Code", level: 95 },
-      { name: "Postman", level: 90 },
-      { name: "Git", level: 90 },
-      { name: "npm/yarn", level: 90 },
-      { name: "Swagger", level: 80 },
+      { name: "PostgreSQL", level: 90 },
+      { name: "Sequelize ORM", level: 90 },
+      { name: "Prisma ORM", level: 85 },
+      { name: "SQL", level: 90 },
+      { name: "Database Design", level: 85 },
     ],
   },
   security: {
@@ -442,6 +536,17 @@ export const skills = {
       { name: "CORS", level: 90 },
       { name: "Rate Limiting", level: 80 },
       { name: "OAuth 2.0", level: 85 },
+    ],
+  },
+  tools: {
+    title: "Herramientas",
+    icon: "FaTools",
+    items: [
+      { name: "VS Code", level: 95 },
+      { name: "Postman", level: 90 },
+      { name: "Git", level: 90 },
+      { name: "npm/yarn", level: 90 },
+      { name: "Swagger", level: 80 },
     ],
   },
 };

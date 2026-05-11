@@ -53,6 +53,12 @@ const Hero = () => {
           {personalInfo.subtitle}
         </motion.p>
 
+        <motion.div className={styles.heroBadges} variants={itemVariants}>
+          <span className={`${styles.badge} ${styles.badgeAi}`}>✦ Inteligencia Artificial</span>
+          <span className={styles.badge}>Full Stack</span>
+          <span className={styles.badge}>Cloud & IoT</span>
+        </motion.div>
+
         <motion.p className={styles.heroDescription} variants={itemVariants}>
           {personalInfo.tagline}
         </motion.p>
