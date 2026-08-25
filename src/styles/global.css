@@ -1,5 +1,6 @@
-/* Global Styles - Apple Inspired */
-@import './variables.css';
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=JetBrains+Mono:wght@500&family=Source+Sans+3:wght@400;600&display=swap');
+@import '../../tokens.css';
+@import '../portfolio/PortfolioPage.module.css';
 
 /* Reset & Base */
 *,
@@ -15,6 +16,7 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    overflow-x: clip;
 }
 
 /* Scroll margin for sections to account for fixed navbar */
@@ -23,13 +25,12 @@ section {
 }
 
 body {
-    font-family: var(--font-primary);
+    font-family: var(--font-body);
     font-size: var(--text-base);
-    font-weight: var(--font-normal);
-    line-height: 1.5;
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-primary);
-    overflow-x: hidden;
+    line-height: 1.6;
+    color: var(--color-ink);
+    background: var(--color-paper);
+    overflow-x: clip;
 }
 
 /* Typography */
@@ -39,10 +40,14 @@ h3,
 h4,
 h5,
 h6 {
-    font-weight: var(--font-semibold);
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    color: var(--color-text-primary);
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+    color: var(--color-ink);
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+    min-width: 0;
 }
 
 h1 {
@@ -73,18 +78,18 @@ h6 {
 }
 
 p {
-    color: var(--color-text-secondary);
+    color: var(--color-ink-2);
     line-height: 1.6;
 }
 
 a {
-    color: var(--color-accent);
+    color: inherit;
     text-decoration: none;
     transition: color var(--transition-fast);
 }
 
 a:hover {
-    color: var(--color-accent-hover);
+    color: var(--color-accent);
 }
 
 /* Utilities */
@@ -182,8 +187,8 @@ a:hover {
 
 /* Focus States */
 :focus-visible {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 2px;
+    outline: 3px solid var(--color-focus);
+    outline-offset: 4px;
 }
 
 /* Responsive Typography */
@@ -206,13 +211,7 @@ a:hover {
 }
 
 /* Smooth Transitions */
-* {
-    transition-property: background-color, border-color, color, fill, stroke;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
-}
-
-/* Prevent transitions on page load */
-.preload * {
-    transition: none !important;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 120ms !important; }
 }
