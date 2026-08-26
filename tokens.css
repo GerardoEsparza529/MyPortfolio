@@ -1,19 +1,19 @@
 /* Hallmark design tokens: Gerardo Esparza */
 :root {
-  --color-paper: oklch(16% 0.012 55);
-  --color-paper-2: oklch(20% 0.014 55);
-  --color-surface: oklch(25% 0.014 55);
-  --color-surface-raised: oklch(29% 0.016 55);
+  --color-paper: oklch(15% 0 0);
+  --color-paper-2: oklch(19% 0 0);
+  --color-surface: oklch(24% 0 0);
+  --color-surface-raised: oklch(28% 0 0);
   --color-ink: oklch(95% 0.008 80);
   --color-ink-2: oklch(77% 0.012 70);
   --color-muted: oklch(62% 0.012 60);
-  --color-rule: oklch(34% 0.014 55);
+  --color-rule: oklch(34% 0 0);
   --color-accent: oklch(72% 0.18 45);
-  --color-accent-ink: oklch(16% 0.012 55);
+  --color-accent-ink: oklch(15% 0 0);
   --color-focus: oklch(78% 0.17 70);
-  --color-nav: oklch(18% 0.012 55 / 0.92);
+  --color-nav: oklch(17% 0 0 / 0.92);
   --color-accent-halo: oklch(72% 0.18 45 / 0.12);
-  --color-backdrop: oklch(8% 0.01 55 / 0.84);
+  --color-backdrop: oklch(8% 0 0 / 0.84);
   --font-display: "Bricolage Grotesque", "Arial Narrow", sans-serif;
   --font-body: "Source Sans 3", Arial, sans-serif;
   --font-mono: "JetBrains Mono", Consolas, monospace;

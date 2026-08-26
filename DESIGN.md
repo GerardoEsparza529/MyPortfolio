@@ -14,12 +14,12 @@ modern-minimal, technical studio
 
 ## Theme
 
-- `--color-paper`: `oklch(16% 0.012 55)`
-- `--color-paper-2`: `oklch(20% 0.014 55)`
-- `--color-surface`: `oklch(25% 0.014 55)`
+- `--color-paper`: `oklch(15% 0 0)`
+- `--color-paper-2`: `oklch(19% 0 0)`
+- `--color-surface`: `oklch(24% 0 0)`
 - `--color-ink`: `oklch(95% 0.008 80)`
 - `--color-ink-2`: `oklch(77% 0.012 70)`
-- `--color-rule`: `oklch(34% 0.014 55)`
+- `--color-rule`: `oklch(34% 0 0)`
 - `--color-accent`: `oklch(72% 0.18 45)`
 - `--color-focus`: `oklch(78% 0.17 70)`
 
@@ -59,4 +59,3 @@ modern-minimal, technical studio
 - Screenshot composition and project-specific diagrams.
 - Section density according to the amount of verified material.
 - Motion choreography, within the reduced-motion contract.
-
