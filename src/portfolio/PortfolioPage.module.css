@@ -89,6 +89,15 @@
 .primaryAction { color: var(--color-accent-ink); background: var(--color-ink); }
 .primaryAction:hover { color: var(--color-accent-ink); background: var(--color-accent); transform: translateY(-2px); }
 .primaryAction:active, .secondaryAction:active { transform: translateY(1px); }
+.arrowIcon {
+  flex: 0 0 auto;
+  width: 1em;
+  height: 1em;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .secondaryAction { border: 1px solid var(--color-rule); }
 .secondaryAction:hover { color: var(--color-ink); background: var(--color-surface); transform: translateY(-2px); }
 .heroFoot { position: absolute; inset: auto 0 0; display: flex; justify-content: space-between; padding-top: var(--space-md); border-top: 1px solid var(--color-rule); font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); }

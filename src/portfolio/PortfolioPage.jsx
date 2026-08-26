@@ -69,7 +69,17 @@ const promoImages = {
 };
 
 function ArrowIcon() {
-  return <span aria-hidden="true">↗</span>;
+  return (
+    <svg
+      className={styles.arrowIcon}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M7 17 17 7M8 7h9v9" />
+    </svg>
+  );
 }
 
 function Navigation({ onOpenResume }) {
@@ -239,6 +249,7 @@ function Experience() {
 
 function Contact({ onOpenResume }) {
   const whatsapp = "https://wa.me/524493465877?text=" + encodeURIComponent("Hola Gerardo, vi tu portafolio y quiero conversar sobre una oportunidad o proyecto.");
+  const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}&su=${encodeURIComponent("Contacto desde tu portafolio")}`;
   return (
     <section className={styles.contact} id="contacto">
       <motion.div {...reveal}>
@@ -251,7 +262,7 @@ function Contact({ onOpenResume }) {
         </motion.article>
         <motion.article {...reveal}>
           <span>Para proyectos</span><h3>Cuéntame qué necesitas resolver.</h3>
-          <div><a className={styles.primaryAction} href={`mailto:${personalInfo.email}`}>Enviar correo <ArrowIcon /></a><a className={styles.textLink} href={whatsapp} target="_blank" rel="noreferrer">Escribir por WhatsApp</a></div>
+          <div><a className={styles.primaryAction} href={gmailCompose} target="_blank" rel="noreferrer">Enviar correo <ArrowIcon /></a><a className={styles.textLink} href={whatsapp} target="_blank" rel="noreferrer">Escribir por WhatsApp</a></div>
         </motion.article>
       </div>
       <footer className={styles.footer}>
