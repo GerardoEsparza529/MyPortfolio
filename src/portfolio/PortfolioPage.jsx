@@ -247,9 +247,8 @@ function Experience() {
   );
 }
 
-function Contact({ onOpenResume }) {
+function Contact({ onOpenResume, onOpenProject }) {
   const whatsapp = "https://wa.me/524493465877?text=" + encodeURIComponent("Hola Gerardo, vi tu portafolio y quiero conversar sobre una oportunidad o proyecto.");
-  const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}&su=${encodeURIComponent("Contacto desde tu portafolio")}`;
   return (
     <section className={styles.contact} id="contacto">
       <motion.div {...reveal}>
@@ -262,7 +261,7 @@ function Contact({ onOpenResume }) {
         </motion.article>
         <motion.article {...reveal}>
           <span>Para proyectos</span><h3>Cuéntame qué necesitas resolver.</h3>
-          <div><a className={styles.primaryAction} href={gmailCompose} target="_blank" rel="noreferrer">Enviar correo <ArrowIcon /></a><a className={styles.textLink} href={whatsapp} target="_blank" rel="noreferrer">Escribir por WhatsApp</a></div>
+          <div><button className={styles.primaryAction} type="button" onClick={onOpenProject}>Cuéntame tu proyecto <ArrowIcon /></button><a className={styles.textLink} href={whatsapp} target="_blank" rel="noreferrer">Escribir por WhatsApp</a></div>
         </motion.article>
       </div>
       <footer className={styles.footer}>
@@ -270,6 +269,137 @@ function Contact({ onOpenResume }) {
         <div><a href={personalInfo.linkedin} target="_blank" rel="noreferrer">LinkedIn</a><a href={personalInfo.github} target="_blank" rel="noreferrer">GitHub</a><a href={`mailto:${personalInfo.email}`}>Email</a></div>
       </footer>
     </section>
+  );
+}
+
+function ProjectModal({ open, onClose }) {
+  const firstInputRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const previousFocus = document.activeElement;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    firstInputRef.current?.focus();
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+      previousFocus?.focus?.();
+    };
+  }, [open, onClose]);
+
+  if (!open) return null;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const name = data.get("name");
+    const company = data.get("company") || "No especificada";
+    const replyEmail = data.get("email");
+    const phone = data.get("phone") || "No especificado";
+    const project = data.get("project");
+    const needs = data.get("needs");
+    const timeline = data.get("timeline");
+    const budget = data.get("budget");
+    const body = `Hola Gerardo,
+
+Vi tu portafolio y me gustaría conversar contigo sobre el siguiente proyecto.
+
+Nombre: ${name}
+Empresa u organización: ${company}
+Correo de contacto: ${replyEmail}
+Teléfono: ${phone}
+
+Proyecto o idea:
+${project}
+
+Problema o necesidad principal:
+${needs}
+
+Plazo estimado: ${timeline}
+Presupuesto estimado: ${budget}
+
+Quedo atento para coordinar una conversación.`;
+    const subject = `${name} - Solicitud de proyecto desde el portafolio`;
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
+    onClose();
+  };
+
+  return (
+    <div className={styles.modalBackdrop} role="presentation" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
+      <section className={`${styles.resumeModal} ${styles.projectModal}`} role="dialog" aria-modal="true" aria-labelledby="project-title">
+        <header className={styles.modalHeader}>
+          <div>
+            <p>Solicitud de proyecto</p>
+            <h2 id="project-title">Cuéntame qué necesitas resolver</h2>
+          </div>
+          <button className={styles.modalClose} type="button" onClick={onClose} aria-label="Cerrar formulario de proyecto">Cerrar</button>
+        </header>
+
+        <form className={styles.projectForm} onSubmit={handleSubmit}>
+          <p className={styles.formIntro}>Completa lo que ya tengas definido. Podremos precisar el resto durante la primera conversación.</p>
+
+          <div className={styles.formGrid}>
+            <label>
+              <span>Nombre</span>
+              <input ref={firstInputRef} name="name" type="text" autoComplete="name" required />
+            </label>
+            <label>
+              <span>Empresa u organización <small>Opcional</small></span>
+              <input name="company" type="text" autoComplete="organization" />
+            </label>
+            <label>
+              <span>Correo de contacto</span>
+              <input name="email" type="email" autoComplete="email" required />
+            </label>
+            <label>
+              <span>Teléfono <small>Opcional</small></span>
+              <input name="phone" type="tel" autoComplete="tel" inputMode="tel" placeholder="Incluye la lada o código de país" />
+            </label>
+            <label className={styles.formFull}>
+              <span>Proyecto o idea</span>
+              <textarea name="project" rows="3" placeholder="Describe brevemente qué quieres construir." required />
+            </label>
+            <label className={styles.formFull}>
+              <span>Problema o necesidad principal</span>
+              <textarea name="needs" rows="4" placeholder="Cuéntame qué proceso, reto o necesidad quieres resolver." required />
+            </label>
+            <label>
+              <span>Plazo estimado</span>
+              <select name="timeline" defaultValue="Por definir">
+                <option>Por definir</option>
+                <option>Menos de 1 mes</option>
+                <option>1 a 3 meses</option>
+                <option>3 a 6 meses</option>
+                <option>Más de 6 meses</option>
+              </select>
+            </label>
+            <label>
+              <span>Presupuesto estimado</span>
+              <select name="budget" defaultValue="Por definir">
+                <option>Por definir</option>
+                <option>Menos de $20,000 MXN</option>
+                <option>$20,000 a $50,000 MXN</option>
+                <option>$50,000 a $100,000 MXN</option>
+                <option>Más de $100,000 MXN</option>
+              </select>
+            </label>
+          </div>
+
+          <footer className={styles.projectFormFooter}>
+            <p>Revisarás el mensaje en Gmail antes de enviarlo.</p>
+            <button className={styles.primaryAction} type="submit">Preparar correo en Gmail <ArrowIcon /></button>
+          </footer>
+        </form>
+      </section>
+    </div>
   );
 }
 
@@ -371,6 +501,7 @@ function ResumeModal({ open, onClose }) {
 
 export default function PortfolioPage() {
   const [resumeOpen, setResumeOpen] = useState(false);
+  const [projectOpen, setProjectOpen] = useState(false);
   const supporting = projects.filter((project) => [2, 3, 4, 5].includes(project.id));
-  return <><Navigation onOpenResume={() => setResumeOpen(true)} /><main><Hero /><DarphaCase /><section className={styles.supporting}><div className={styles.sectionHeading}><h2>La misma disciplina, aplicada a otros contextos.</h2></div>{supporting.map((project, index) => <ProjectRow key={project.id} project={project} index={index} />)}</section><Profile /><Experience /><Contact onOpenResume={() => setResumeOpen(true)} /></main><ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} /></>;
+  return <><Navigation onOpenResume={() => setResumeOpen(true)} /><main><Hero /><DarphaCase /><section className={styles.supporting}><div className={styles.sectionHeading}><h2>La misma disciplina, aplicada a otros contextos.</h2></div>{supporting.map((project, index) => <ProjectRow key={project.id} project={project} index={index} />)}</section><Profile /><Experience /><Contact onOpenResume={() => setResumeOpen(true)} onOpenProject={() => setProjectOpen(true)} /></main><ResumeModal open={resumeOpen} onClose={() => setResumeOpen(false)} /><ProjectModal open={projectOpen} onClose={() => setProjectOpen(false)} /></>;
 }
